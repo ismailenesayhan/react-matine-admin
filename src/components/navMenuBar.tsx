@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar,MediaQuery } from "@mantine/core";
+import { Navbar } from "@mantine/core";
 import {
   Devices2,
   FileDatabase,
