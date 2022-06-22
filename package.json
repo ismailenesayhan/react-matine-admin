@@ -1,6 +1,6 @@
 {
-  "name": "ieapi-admin",
-  "version": "0.1.0",
+  "name": "react-mantine-admin-template",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@mantine/core": "^4.2.9",
