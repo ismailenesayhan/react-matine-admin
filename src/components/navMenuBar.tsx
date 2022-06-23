@@ -14,11 +14,11 @@ import { User } from "./_user";
 
 const data = [
   { icon: <SmartHome size={24} />, color: "gray", label: "Başlangıç", link:"/" },
-  { icon: <Devices2 size={24} />, color: "gray", label: "Cihazlar", link:"about"},
-  { icon: <FileDatabase size={24} />, color: "gray", label: "Log Kayıtları", link:"/"},
-  { icon: <Users size={24} />, color: "gray", label: "Kullanıcılar", link:"about"},
-  { icon: <Settings size={24} />, color: "gray", label: "Ayarlar", link:"/"},
-  { icon: <Logout size={24} />, color: "gray", label: "Oturumu Kapat", link:"about"},
+  { icon: <Devices2 size={24} />, color: "gray", label: "Cihazlar", link:"devices"},
+  { icon: <FileDatabase size={24} />, color: "gray", label: "Log Kayıtları", link:"logs"},
+  { icon: <Users size={24} />, color: "gray", label: "Kullanıcılar", link:"users"},
+  { icon: <Settings size={24} />, color: "gray", label: "Ayarlar", link:"settings"},
+  { icon: <Logout size={24} />, color: "gray", label: "Oturumu Kapat", link:"login"},
 ];
 
 function MainLinks(props: {onClick: any }) {

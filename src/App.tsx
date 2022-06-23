@@ -9,10 +9,17 @@ import {
   Group,
 } from "@mantine/core";
 import { useScrollLock } from '@mantine/hooks';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { FooterBar } from "./components/footerBar";
 import { HeaderBar } from "./components/headerBar";
 import { NavMenuBar } from "./components/navMenuBar";
+
+import Index from "./pages/index";
+import Users from "./pages/users";
+import Devices from "./pages/devices";
+import Logs from "./pages/logs";
+import Settings from "./pages/settings";
+import Login from "./pages/login";
 
 export default function AppShellPi() {
   const theme = useMantineTheme();
@@ -66,37 +73,13 @@ export default function AppShellPi() {
       }
     >
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="/" element={<Index />} />
+        <Route path="devices" element={<Devices />} />
+        <Route path="logs" element={<Logs />} />
+        <Route path="users" element={<Users />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="login" element={<Login />} />
       </Routes>
     </AppShell>
-  );
-}
-
-function Home() {
-  return (
-    <>
-      <main>
-        <h2>Welcome to the homepage!</h2>
-        <p>You can do this, I believe in you.</p>
-      </main>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
-    </>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <main>
-        <h2>Who are we?</h2>
-        <p>That feels like an existential question, don't you think?</p>
-      </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-    </>
   );
 }
