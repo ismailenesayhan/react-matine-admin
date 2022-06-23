@@ -7,12 +7,13 @@ interface MenuLinkProps {
   color: string;
   label: string;
   link: string;
+  onClick: any;
 }
 
-export function MenuLink({ icon, color, label, link }: MenuLinkProps) {
+export function MenuLink({ icon, color, label, link, onClick }: MenuLinkProps) {
 
   return (
-    <NavLink to={link} style={{ color: "red", textDecoration: "none" }}>
+    <NavLink to={link} style={{ color: "red", textDecoration: "none" }} onClick={() => onClick()}>
       <UnstyledButton
         sx={(theme) => ({
           display: "block",

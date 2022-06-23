@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "@mantine/core";
+import { Navbar, ScrollArea } from "@mantine/core";
 import {
   Devices2,
   FileDatabase,
@@ -21,16 +21,16 @@ const data = [
   { icon: <Logout size={24} />, color: "gray", label: "Oturumu Kapat", link:"about"},
 ];
 
-function MainLinks() {
-  const links = data.map((link) => <MenuLink {...link} key={link.label} />);
+function MainLinks(props: {onClick: any }) {
+  const links = data.map((link) => <MenuLink {...link} key={link.label} onClick={props.onClick} />);
   return <div>{links}</div>;
 }
 
-export function NavMenuBar() {
+export function NavMenuBar(props: {onClick: any }) {
   return (
     <>
-      <Navbar.Section grow mt="xs">
-        <MainLinks />
+      <Navbar.Section grow component={ScrollArea} mx="-xs" px="xs" mb="lg">
+        <MainLinks onClick={props.onClick}/>
       </Navbar.Section>
       <Navbar.Section>
         <User />

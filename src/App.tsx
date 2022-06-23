@@ -5,7 +5,10 @@ import {
   Header,
   Footer,
   useMantineTheme,
+  MediaQuery,
+  Group,
 } from "@mantine/core";
+import { useScrollLock } from '@mantine/hooks';
 import { Routes, Route, Link } from "react-router-dom";
 import { FooterBar } from "./components/footerBar";
 import { HeaderBar } from "./components/headerBar";
@@ -14,7 +17,12 @@ import { NavMenuBar } from "./components/navMenuBar";
 export default function AppShellPi() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
+  const [, setScrollLocked] = useScrollLock();
 
+  function toggleClick() {
+    setOpened((o) => !o)
+    setScrollLocked((c) => !c)
+  }
   return (
     <AppShell
       styles={{
@@ -38,9 +46,12 @@ export default function AppShellPi() {
           hiddenBreakpoint="sm"
           hidden={!opened}
           width={{sm: 250, lg: 300}}
-          
         >
-          <NavMenuBar />
+          <NavMenuBar onClick={() => toggleClick()}/>
+          <MediaQuery largerThan="sm" styles={{ display: "none" }}>
+            <Group sx={{ height: '15%' }} />
+          </MediaQuery>
+
         </Navbar>
       }
       footer={
@@ -50,7 +61,7 @@ export default function AppShellPi() {
       }
       header={
         <Header height={70} p="md">
-          <HeaderBar opened={opened} onClick={() => setOpened((o) => !o)} />
+          <HeaderBar opened={opened} onClick={() => toggleClick()} />
         </Header>
       }
     >
