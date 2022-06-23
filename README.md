@@ -1,4 +1,4 @@
-# React Mantine Admin Template (typescript)
+# React Mantine Admin Template (Typescript)
 
 Mantine.dev, react-router-dom
 

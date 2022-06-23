@@ -37,7 +37,7 @@ export default function AppShellPi() {
           p="md"
           hiddenBreakpoint="sm"
           hidden={!opened}
-          width={{lg: 300}}
+          width={{sm: 250, lg: 300}}
           
         >
           <NavMenuBar />
