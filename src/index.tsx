@@ -15,12 +15,12 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
+ // <React.StrictMode>
     <BrowserRouter>
       <InApp />
       <ScrollToTop/>
     </BrowserRouter>
-  </React.StrictMode>
+ // </React.StrictMode>
 );
 
 function InApp() {
