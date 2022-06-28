@@ -1,0 +1,13 @@
+import React from "react";
+import { ActionIcon, useMantineColorScheme } from "@mantine/core";
+import { Sun, MoonStars } from "tabler-icons-react";
+
+export default function ColorSchemeButton() {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+
+  return (
+    <ActionIcon variant="default" onClick={() => toggleColorScheme()} size={30}>
+      {colorScheme === "dark" ? <Sun size={16} /> : <MoonStars size={16} />}
+    </ActionIcon>
+  );
+}
