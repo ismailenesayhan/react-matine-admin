@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   AppShell,
   Navbar,
   Header,
   Footer,
   useMantineTheme,
-  MediaQuery,
-  Group,
 } from "@mantine/core";
-import { useScrollLock } from "@mantine/hooks";
 import { Outlet } from "react-router-dom";
 import { FooterBar } from "../footerBar";
 import { HeaderBar } from "../headerBar";
@@ -17,11 +14,9 @@ import { NavMenuBar } from "../navMenuBar";
 export default function AppShellLayout() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
-  const [, setScrollLocked] = useScrollLock();
 
   function toggleClick() {
     setOpened((o) => !o);
-    setScrollLocked((c) => !c);
   }
 
   return (
@@ -49,9 +44,6 @@ export default function AppShellLayout() {
           width={{ sm: 250, lg: 300 }}
         >
           <NavMenuBar onClick={() => toggleClick()} />
-          <MediaQuery largerThan="sm" styles={{ display: "none" }}>
-            <Group sx={{ height: "15%" }} />
-          </MediaQuery>
         </Navbar>
       }
       footer={
