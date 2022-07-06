@@ -39,13 +39,7 @@ export default function Users() {
 
   return (
     <>
-      <PageTitle
-        title="Kullanıcılar"
-        filter={filter}
-        setFilter={(event: React.ChangeEvent<HTMLInputElement>) =>
-          setFilter(event.target.value)
-        }
-      />
+      <PageTitle title="Kullanıcılar" />
       <Container size="lg">
         <Grid>
           {loading &&
