@@ -1,7 +1,15 @@
-export function cutString( str:string, size:number ) {
+import { Tooltip, ActionIcon } from "@mantine/core";
+
+export function cutString(str: string, size: number) {
   if (str.length > size) {
-    let newStr = str.substring(0, size) + "...";
-    return newStr;
+    return (
+      <>
+        {str.substring(0, size)}
+        <Tooltip wrapLines width={220} label={str} withArrow>
+          <ActionIcon>...</ActionIcon>
+        </Tooltip>
+      </>
+    );
   } else {
     return str;
   }
